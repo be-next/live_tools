@@ -1,17 +1,21 @@
 import sys
-
-sys.path.append("./live_tools")
 import ta
-from utilities.spot_ftx import SpotFtx
-from utilities.custom_indicators import Trix
 import json
 import logging
+
+sys.path.append("./live_tools")
+
+from utilities.spot_ftx import SpotFtx
+from utilities.custom_indicators import Trix
+
 
 # Init log
 logging.basicConfig(format='%(asctime)s - %(levelname)s - Bot trix TRX - %(message)s', level=logging.INFO)
 logging.info('Start')
 
 # FTX connexion
+logging.info("Connecting to FTX sub account...")
+
 f = open(
     "./live_tools/secret.json",
 )
@@ -26,6 +30,8 @@ ftx = SpotFtx(
     subAccountName=secret[account_to_select]["subAccountName"],
 )
 
+logging.info("Connected to the FTX sub account " + secret[account_to_select]["subAccountName"])
+
 #
 pair_symbol = 'TRX/USD'
 symbol_coin = 'TRX'
@@ -36,16 +42,16 @@ timeframe = "1h"
 trixWindow = 8
 trixSignal = 17
 stochWindow = 20
-stochOverBought = 0.7
+stochOverBought = 0.75
 stochOverSold = 0.25
 
 # Data load
+logging.info("Start loading indicators...")
 df = ftx.get_last_historical(pair_symbol, timeframe, 40)
 #
 min_order_amount = float(ftx.get_min_order_amount(pair_symbol))
 
 # Compute indicators
-logging.info("Start loading indicators")
 trix = Trix(close=df['close'], trixLength=trixWindow, trixSignal=trixSignal)
 df['TRIX_HISTO'] = trix.trix_histo()
 df['STOCH_RSI'] = ta.momentum.stochrsi(close=df['close'], window=stochWindow)
@@ -86,28 +92,29 @@ logging.info("Balance " + symbol_usd + " : " + str(balance_usd))
 row = df.iloc[-2]
 row_time = df.index[-2]
 
-logging.info("timestamp : " + str(row_time) + ", close : " + str(row['close']) + ", TRIX_HISTO : " + str(row['TRIX_HISTO']) + ", STOCH_RSI : " + str(row['STOCH_RSI']))
+logging.info("timestamp: " + str(row_time) + ", close: " + str(row['close']) + ", TRIX_HISTO: " + str(row['TRIX_HISTO']) + ", STOCH_RSI: " + str(row['STOCH_RSI']))
 
-logging.info("Test sell conditions")
+logging.info("Test sell conditions...")
 if balance_coin > min_order_amount:
     if sellCondition(row):
         amount_to_sell = balance_coin
         ftx.place_market_order(pair_symbol, "sell", amount_to_sell)
-        logging.info("* Sale of " + str(ftx.convert_amount_to_precision(pair_symbol, amount_to_sell)) + " " + symbol_coin + " at the price of ~" + str(row['close']) + " $")
+        logging.info("** Sell order: " + str(ftx.convert_amount_to_precision(pair_symbol, amount_to_sell)) + " " + symbol_coin + " at the price of ~" + str(row['close']) + " $")
     else:
-        logging.info("* Sale's conditions are not met")
+        logging.info("* Sell conditions: False")
 else:
     logging.info("* No coin to sell")
 
-logging.info("Test buy conditions")
+logging.info("Test buy conditions...")
 if balance_usd > (min_order_amount * row['close']):
     if buyCondition(row):
         amount_to_buy = balance_usd / row["close"]
         ftx.place_market_order(pair_symbol, "buy", amount_to_buy)
-        logging.info( "* Purchase of " + str(ftx.convert_amount_to_precision(pair_symbol, amount_to_buy)) + " " + symbol_coin + " at the price of ~" + str(row['close']) + " $")
+        logging.info( "** Buy order: " + str(ftx.convert_amount_to_precision(pair_symbol, amount_to_buy)) + " " + symbol_coin + " at the price of ~" + str(row['close']) + " $")
     else:
-        logging.info("* Buy's conditions are not met")
+        logging.info("* Buy conditions: False")
 else:
-    logging.info("* No enough " + symbol_usd + " to buy any coin")
+    logging.info("* Not enough " + symbol_usd + " to buy any coin")
+
 
 logging.info('Finished')
