@@ -57,8 +57,8 @@ df['TRIX_HISTO'] = trix.trix_histo()
 df['STOCH_RSI'] = ta.momentum.stochrsi(close=df['close'], window=stochWindow)
 logging.info("Indicators loaded")
 
-print(df)
-print(min_order_amount)
+# print(df)
+# print(min_order_amount)
 
 # -- Trade Functions --
 # -- Condition to BUY market --
@@ -98,7 +98,7 @@ logging.info("Test sell conditions...")
 if balance_coin > min_order_amount:
     if sellCondition(row):
         amount_to_sell = balance_coin
-#        ftx.place_market_order(pair_symbol, "sell", amount_to_sell)
+        ftx.place_market_order(pair_symbol, "sell", amount_to_sell)
         logging.info("** Sell order: " + str(ftx.convert_amount_to_precision(pair_symbol, amount_to_sell)) + " " + symbol_coin + " at the price of ~" + str(row['close']) + " $")
     else:
         logging.info("* Sell conditions: False")
@@ -109,7 +109,7 @@ logging.info("Test buy conditions...")
 if balance_usd > (min_order_amount * row['close']):
     if buyCondition(row):
         amount_to_buy = balance_usd / row["close"]
-#        ftx.place_market_order(pair_symbol, "buy", amount_to_buy)
+        ftx.place_market_order(pair_symbol, "buy", amount_to_buy)
         logging.info( "** Buy order: " + str(ftx.convert_amount_to_precision(pair_symbol, amount_to_buy)) + " " + symbol_coin + " at the price of ~" + str(row['close']) + " $")
     else:
         logging.info("* Buy conditions: False")
