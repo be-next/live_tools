@@ -57,8 +57,8 @@ df['TRIX_HISTO'] = trix.trix_histo()
 df['STOCH_RSI'] = ta.momentum.stochrsi(close=df['close'], window=stochWindow)
 logging.info("Indicators loaded")
 
-#print(df)
-#print(min_order_amount)
+# print(df)
+# print(min_order_amount)
 
 # -- Trade Functions --
 # -- Condition to BUY market --
