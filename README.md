@@ -10,9 +10,7 @@ La stratégie prend en compte le `trix` et le `stochastic RSI`
 (La stratégie est présentée dans cette vidéo [Le TRIX la stratégie la plus RENTABLE ?! 1000$ to 1M$ sur ETH en 4 ans | TrueStrategy#4](https://youtu.be/uE04UROWkjs)) 
 avec des paramètres optimisés pour le TRX et le SOL (cf. [Optimiser vos BOT de TRADING afin de gagner en RENTABILITÉ ! Guide python d'optimisation du TRIX](https://youtu.be/jm-UfVPqUQo)).
 
-Le `bot` utilise l'exchage FTX :
-> Lien d'affiliation FTX : https://ftx.com/eu/profile#a=121892334
-> (*utiliser ce lien permet d'économiser 5% sur les frais de transaction*).
+Ce `bot` utilisait l'exchage FTX et n'est plus opérqtionnel en l'état ... ಥ﹏ಥ ... (╬ ಠ益ಠ) ... t(-_-t) SBF !
 
 
 ## Installation
