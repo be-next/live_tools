@@ -21,7 +21,7 @@ f = open(
 secret = json.load(f)
 f.close()
 
-account_to_select = "bitget_exemple"
+account_to_select = "bitget_bot_1"
 production = True
 timeframe = "1h"
 type = ["long", "short"]
@@ -222,12 +222,12 @@ params_coin = {
         "bb_std": 2.25,
         "long_ma_window": 500
     },
-    "YFI/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
+ #   "YFI/USDT:USDT": {
+ #       "wallet_exposure": 0.05,
+ #       "bb_window": 100,
+ #       "bb_std": 1,
+ #       "long_ma_window": 500
+ #   },
     "WOO/USDT:USDT": {
         "wallet_exposure": 0.05,
         "bb_window": 100,
