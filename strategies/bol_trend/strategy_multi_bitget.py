@@ -26,234 +26,228 @@ production = True
 timeframe = "1h"
 type = ["long", "short"]
 leverage = 1
-max_var = 1
+max_var = 1.5
 max_side_exposition = 1
 
 params_coin = {
-    "BTC/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "BTC/USDT": {
+        "wallet_exposure": 0.15,
         "bb_window": 100,
         "bb_std": 2.25,
         "long_ma_window": 500
     },
-    "AAVE/USDT:USDT": {
+    "AAVE/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "APE/USDT": {
         "wallet_exposure": 0.05,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "APE/USDT:USDT": {
+    "APT/USDT": {
         "wallet_exposure": 0.05,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "APT/USDT:USDT": {
+    "AVAX/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "AXS/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "C98/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "CRV/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "DOGE/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "DOT/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "DYDX/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "ETH/USDT": {
+        "wallet_exposure": 0.15,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "FIL/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "FTM/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "BNB/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "GALA/USDT": {
+        "wallet_exposure": 0.1,
+        "bb_window": 100,
+        "bb_std": 1,
+        "long_ma_window": 500
+    },
+    "GMT/USDT": {
         "wallet_exposure": 0.05,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "AVAX/USDT:USDT": {
+    "GRT/USDT": {
         "wallet_exposure": 0.05,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "AXS/USDT:USDT": {
+    "KNC/USDT": {
         "wallet_exposure": 0.05,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "C98/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "CRV/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "DOGE/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "DOT/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "DYDX/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "ETH/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "FIL/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "FTM/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "BNB/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "GALA/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "GMT/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "GRT/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "KNC/USDT:USDT": {
-        "wallet_exposure": 0.05,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
-    "KSM/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "KSM/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 2.25,
         "long_ma_window": 500
     },
-    "LRC/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "LRC/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "MANA/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "MANA/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "MASK/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "MASK/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "MATIC/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "MATIC/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "NEAR/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "NEAR/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "ONE/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "ONE/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "OP/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "OP/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 2.25,
         "long_ma_window": 500
     },
-    "SAND/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "SAND/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "SHIB/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "SHIB/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "SOL/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "SOL/USDT": {
+        "wallet_exposure": 0.15,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "STG/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "STG/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "WAVES/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "WAVES/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 2.25,
         "long_ma_window": 500
     },
- #   "YFI/USDT:USDT": {
- #       "wallet_exposure": 0.05,
- #       "bb_window": 100,
- #       "bb_std": 1,
- #       "long_ma_window": 500
- #   },
-    "WOO/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "WOO/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "EGLD/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "EGLD/USDT": {
+        "wallet_exposure": 0.15,
         "bb_window": 100,
         "bb_std": 2.25,
         "long_ma_window": 500
     },
-    "ETC/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "ETC/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 2.25,
         "long_ma_window": 500
     },
-    "JASMY/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "JASMY/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 2.25,
         "long_ma_window": 500
     },
-    "ROSE/USDT:USDT": {
-        "wallet_exposure": 0.05,
+    "ROSE/USDT": {
+        "wallet_exposure": 0.1,
         "bb_window": 100,
         "bb_std": 2.25,
         "long_ma_window": 500
