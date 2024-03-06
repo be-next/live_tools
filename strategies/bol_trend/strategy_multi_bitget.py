@@ -24,7 +24,8 @@ f.close()
 account_to_select = "bitget_bot_1"
 production = True
 timeframe = "1h"
-type = ["long", "short"]
+#type = ["long", "short"]
+type = ["long"]
 leverage = 1
 max_var = 1.5
 max_side_exposition = 1
