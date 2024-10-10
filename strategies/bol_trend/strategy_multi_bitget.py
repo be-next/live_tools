@@ -169,12 +169,6 @@ params_coin = {
         "bb_std": 1,
         "long_ma_window": 500
     },
-    "MATIC/USDT:USDT": {
-        "wallet_exposure": 0.1,
-        "bb_window": 100,
-        "bb_std": 1,
-        "long_ma_window": 500
-    },
     "NEAR/USDT:USDT": {
         "wallet_exposure": 0.1,
         "bb_window": 100,
